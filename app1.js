@@ -18,10 +18,20 @@ const shouldShowPopUp = () => !storageType.getItem(consentPropertyName);
 const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
 window.onload = () => {
-    if (shouldShowPopUp()) {
-        const consent = confirm('Agree to the terms and conditions of the site?');
-        if (consent) {
-            saveToStorage();
-        }
+    const consentPopup = document.getElementById('consent-popup');
+    const acceptBtn = document.getElementById('accept');
+
+    const acceptFn = event =>{
+        saveToStorage(storageType);
+        consentPopup.classList.add('hidden');
+    };
+
+    acceptBtn.addEventListener('click', acceptFn);
+
+    if (shouldShowPopUp(storageType)) {
+        setTimeout(() =>{
+            consentPopup.classList.remove('hidden');
+        }, 2000);
+        
     }
-}
+};

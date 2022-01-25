@@ -3,11 +3,16 @@
 }
 
 #consent-popup{
-    background-color: bisque;
+    background-color: rgb(196, 182, 58);
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 2rem;
     opacity: 1;
+    transition: opacity .8s ease;
+}
+
+.hidden{
+    opacity: 0;
 }
