@@ -30,3 +30,8 @@ document.addEventListener("submit", (event) => {
 var onloadCallback = function() {
     alert("grecaptcha is ready!");
   };
+
+function recaptcha_callback(){
+    var submitButton = document.querySelector('#subBtn') ;
+    submitButton.removeAttribute('disable');
+}

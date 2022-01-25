@@ -17,17 +17,17 @@
         <input type="text" name="username" id="username"> <br>
         <label>password</label>
         <input type="password" name="password" id="password"><br>
-        <div class="frc-captcha" data-sitekey="FCMT07B8PMCO90GL"></div>
-        <input type="submit" value="Send" id="submBtnbtn">
+        <input type="submit" value="Send" id="subBtn" disabled>
         <script src="../../jensen-backend/app.js"></script>
     </form>
     <form action="?" method="POST">
-        <div class="g-recaptcha" data-sitekey="6LfUtA4eAAAAAPzIxyQMpm4obYMsN9N9sqvDi1AZ"></div>
+        <div class="g-recaptcha" data-sitekey="6LfUtA4eAAAAAPzIxyQMpm4obYMsN9N9sqvDi1AZ"
+            data-callback='recaptcha_callback'></div>
         <br />
     </form>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>
-    
+
     <div id="consent-popup" class="hidden">
         <center>
             <p>By using this website you agree to our <a href="#">terms and conditions</a>. <br>Please <a href="#"
@@ -35,7 +35,7 @@
         </center>
     </div>
     <script src="app1.js"></script>
-    
+
 
 
 </body>
