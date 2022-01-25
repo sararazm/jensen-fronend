@@ -1,27 +1,32 @@
-//console.log("Hello World")
 
-var username
-var password
-document.addEventListener("submit", (event)=>{
-    console.log("Submitted");
-    username = document.getElementById("username").value
-    password = document.getElementById("password").value
+document.addEventListener("submit", (event) => {
+    console.log("Validating")
+    let user = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
-    const headers = new Headers()
-    headers.append("Accept" , "application/json")
+    const headers = new Headers();
+    headers.append("Accept", "application/json")
     headers.append("Authorization", btoa(username + ":" + password))
-
-
-    fetch("http://localhost:2000" , {headers: headers}).then(function (response){
-        if (response.ok){
-            document.write("SUCCESSFULL LOGIN")
+    fetch("http://localhost:5000", { headers: headers }).then(function (response) {
+        if (response.ok) {
+            document.write("Framgång login!")
         }
         throw response;
-    }).then(function (data){
-        console.log(data)
-    }).catch(function (error){
+    }).then(function (data) {
+        console.log(data);
+    }).catch(function (error) {
         console.warn(error);
     });
-    event.preventDefault()
-    })
+
+    let request = new XMLHttpRequest();
+    request.open("POST", "http://localhost:5000/authorize");
+    console.log("Validated")
     
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.send(`user=${user}&password=${password}`);
+    event.preventDefault()
+})
+
+var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };

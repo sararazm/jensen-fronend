@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="main.css">
+    <link rel="stylesheet" src="style.css">
     <title>Document</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
+
 <body>
     <form>
         <label>username</label>
-        <input type="text" name="username" id="username">
-        <label >password</label>
-        <input type="password" name="password" id="password">
-        <input type="submit">
+        <input type="text" name="username" id="username"> <br>
+        <label>password</label>
+        <input type="password" name="password" id="password"><br>
+        <div class="frc-captcha" data-sitekey="FCMT07B8PMCO90GL"></div>
+        <input type="submit" value="Send" id="submBtnbtn">
+        <script src="../../jensen-backend/app.js"></script>
     </form>
-    <script src="app.js"></script>
+    <form action="?" method="POST">
+        <div class="g-recaptcha" data-sitekey="6LfUtA4eAAAAAPzIxyQMpm4obYMsN9N9sqvDi1AZ"></div>
+        <br />
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
+    <div id="consent-popup" class="hidden">
+        <p>By using this website you agree to our <a href="#">terms and conditions</a>. <br>Please <a href="#"
+                id="accept">accept</a> these before using our website.</p>
+    </div>
+    <script src="app1.js"></script>
+
+
 </body>
+
 </html>

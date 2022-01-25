@@ -1,0 +1,13 @@
+#send-btn{
+    cursor: not-allowed;
+}
+
+#consent-popup{
+    background-color: bisque;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    opacity: 1;
+}
